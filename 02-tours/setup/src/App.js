@@ -7,7 +7,32 @@ const url = 'https://course-api.com/react-tours-project'
 
 function App() {
   const [loading, setLoading] = useState(true);
-  return <h2>Tours Project Setup</h2>
+  const[tours, setTours] = useState([]);
+
+const fecthTours = async () => {
+  setLoading(true);
+  try {
+    const response = await fetch(url);
+    const tours = await response.json();
+    setLoading(false)
+    setTours(true)
+  } catch (error) {
+    setLoading(false);
+    console.log(error);    
+  }
+};
+  if(loading){
+    return(
+      <main>
+        <Loading />
+      </main>
+    );
+  }
+  return(
+    <main>
+      <Tours />
+    </main>
+  );
 }
 
 export default App
