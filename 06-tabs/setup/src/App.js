@@ -8,8 +8,41 @@ function App() {
   const [jobs, setJobs] = useState([])
   const [value, setValue] = useState(0)
 
-  
-  return <h2>tabs project setup</h2>
+  const fetchJobs = async () => {
+    const response = await fetch(url)
+    const newJobs = await response.json() 
+    setJobs(newJobs)
+    setLoading(false)
+  }
+
+  useEffect(() =>{
+    fetchJobs()
+  }, [])
+
+  if (loading) {
+    return (
+      <section className='section loading'>
+       <h1>loading...</h1>
+      </section>
+    )
+  }
+
+  const { company, dates, duties, title } = jobs[value]
+  return (
+   <section className='section'>
+     <div className="title">
+       <h2>experince</h2>
+       <div className="underline"></div>
+     </div>
+     <div className="jobs-center">
+       {/*btn container */}
+       {/*job info */}
+      <article className='job-info'>
+        <h3>{title}</h3>
+      </article>
+     </div>
+   </section> 
+  )
 }
 
 export default App
