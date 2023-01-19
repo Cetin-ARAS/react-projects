@@ -6,7 +6,27 @@ function App() {
   const [people,setPeople] = useState(data);
   const[index,setIndex] = useState(0)
 
-  return <h2>slider project setup</h2>;
+  return (
+    <section className='title' >
+      <div className="title">
+        <h2>
+          <span>/</span>reviews
+        </h2>
+      </div>
+      <div className="section-center">
+        {people.map((person,personIndex)=>{
+          const {id, image, name, title, quote} = person;
+          // more stuff coming up
+          return (
+            <article key={id}>
+              <img src ={image} alt={name}/>
+            </article>
+          )
+
+        })}
+      </div>
+    </section>
+  )
 }
 
 export default App;
