@@ -27,7 +27,12 @@ function App() {
             </article>
           );
         })}
-        <button className='prev' ></button>
+        <button className='prev'>
+          <FiChevronLeft/>
+        </button>
+        <button className='icon'>
+          <FiChevronLeft/>
+        </button>
       </div>
     </section>
   )
