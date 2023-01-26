@@ -15,7 +15,9 @@ function App() {
     <label htmlFor="amount">
       paragraphs:
     </label>
-    <input type="number"  />
+    <input type="number" name="amount" id="amount" value={count}
+    onChange={(e)=>setCount(e.target.value)}/>
+    <butto type="submit" className="btn">generator</butto>
   </section>
     );
 }
