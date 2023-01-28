@@ -6,7 +6,7 @@ function App() {
   
   const handleSubmit = (e) =>{
     e.preventDefault();
-    console.log('hello world');
+    setText(data);
   }
   return (
   <section className='section-center'>
@@ -17,8 +17,14 @@ function App() {
     </label>
     <input type="number" name="amount" id="amount" value={count}
     onChange={(e)=>setCount(e.target.value)}/>
-    <butto type="submit" className="btn">generate</butto>
+    <button type="submit" className="btn">generate</button>
     </form>
+    <article className='lorem-text'>
+        {text.map((item,index) =>{
+          return <p key={index}>{item}</p>
+   })}
+
+    </article>
   </section>
     );
 }
