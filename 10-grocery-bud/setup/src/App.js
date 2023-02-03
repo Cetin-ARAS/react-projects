@@ -7,25 +7,39 @@ function App() {
   const [list,setList] = useState([]);
   const [isEditing,setİsEditing] = useState(false);
   const [editID,setEditID] = useState(null);
-  const [alert,setAlert] = useState({show:false,msg:'',type: ''});
+  const [alert,setAlert] = useState({show: false, msg:'', type: ''});
  
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.
+    
   }
   return (
     
     <section className='section-center'>
        <form className='grocery-form' onSubmit={handleSubmit}>
-        {alert.show && < Alert />}
+         {alert.show && < Alert />}
+         <h3>grocery bud</h3>
+         <div className="form-control">
+            <input 
+              type="text" 
+              className='grocery' 
+              placeholder='e.g. eggs' 
+              value={name} 
+              onChange= {(e) => setName(e.target.value)} 
+             />
+            <button type='submit' className='submit-btn'>
+              {isEditing ? 'edit' : 'submit'}
+            </button>
+         </div>
        </form>
        <div className="grocery-container">
-        <List />
-        <button className='clear-btn'>
+         <List />
+         <button className='clear-btn'>
           clear items
-        </button>
+         </button>
        </div>
     </section>
-}
+  ) 
+  }
 
 export default App
