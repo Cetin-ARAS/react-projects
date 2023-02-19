@@ -4,19 +4,25 @@ import Detail from "./pages/Detail";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import PageContainer from "./containers/PageContainer";
+import { useSelector } from "react-redux";
+import Card from "./components/Card";
 
 
 function App() {
+  const {drawer} = useSelector(state => state.drawer)
+
+
   return (
     <div className="App">
-     <PageContainer>
+      <PageContainer>
      <BrowserRouter>
-     <Navbar />
+       <Navbar/>
        <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="detail/:id" element={<Detail />} />
+         <Route path="/" element={<Home />} />
+         <Route path="detail/:id" element={<Detail />} />
        </Routes>
-     <Footer />
+        {drawer && <Card/>}
+       <Footer />
      </BrowserRouter>
      </PageContainer> 
     </div>
