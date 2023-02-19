@@ -1,9 +1,23 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import ProductCrad from '../components/ProductCrad';
+import { productsAction } from '../redux/actions/products';
 
 const Home = () => {
+    const dispatch = useDispatch();
+    const { products } = useSelector(state => state.products);
+
+    useEffect(() => {
+        dispatch(productsAction())
+        
+    }, [dispatch])
+    
+
   return (
     <div>
-      <p>Home</p>
+        products && products.map((prd, i) => (
+            <ProductCrad key={i} prd={prd}/>
+        ))
     </div>
   )
 }
