@@ -1,8 +1,8 @@
 import React from 'react'
 
-const PageContainer = (children) => {
+const PageContainer = ({children}) => {
   return (
-    <div>
+    <div className='w-3/4 m-auto'>
       {children}
     </div>
   )
