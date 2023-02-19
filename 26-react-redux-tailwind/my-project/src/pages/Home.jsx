@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import ProductCrad from '../components/ProductCrad';
+import ProductCard from '../components/ProductCard';
 import { productsAction } from '../redux/actions/products';
 
 const Home = () => {
@@ -14,10 +14,10 @@ const Home = () => {
     
 
   return (
-    <div>
-        products && products.map((prd, i) => (
-            <ProductCrad key={i} prd={prd}/>
-        ))
+    <div className='flex flex-wrap justify-center'>
+        {products && products.map((prd, i) => (
+            <ProductCard key={i} prd={prd}/>
+        ))}
     </div>
   )
 }
