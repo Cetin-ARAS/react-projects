@@ -1,4 +1,5 @@
 
+
 export const productsAction = () => async (dispatch) =>{
     const data = await fetch('https://fakestoreapi.com/products')
     .then(res=>res.json())

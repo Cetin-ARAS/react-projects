@@ -1,7 +1,7 @@
 
 
 
-export const productsReducer = (state = {products : ()}, action) => {
+export const productsReducer = (state = {products : []}, action) => {
     switch (action.type) {
         case "GET_PRODUCTS":
             return{
