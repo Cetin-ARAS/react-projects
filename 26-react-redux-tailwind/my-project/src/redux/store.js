@@ -5,8 +5,9 @@ import { drawerReducer } from "./reducers/drawer";
 import { productsReducer } from "./reducers/products";
 import {productsDetailReducer} from "./reducers/productDetail";
 
+const cardItems = JSON.parse(localStorage.getItem('cardItems')) || [] 
 let initialState = {
-
+    card: {cardItems}
 }
 
 const reducers = combineReducers({
