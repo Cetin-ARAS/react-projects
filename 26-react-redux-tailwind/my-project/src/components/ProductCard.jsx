@@ -13,4 +13,4 @@ const ProductCard = ({prd}) => {
   )
 }
 
-export default ProductCard
+export default ProductCard;

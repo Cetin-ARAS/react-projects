@@ -7,7 +7,7 @@ const Card = () => {
     const dispatch = useDispatch()
     const {cardItems} = useSelector(state => state.card);
     const deleteCard = (id) => {
-      dispatch(removeCard())
+      dispatch(removeCard(id))
     }
   return (
     <div className='w-1/3 h-full border fixed top-0 right-0 z-50 bg-white py-4 mt-10'>
@@ -38,4 +38,4 @@ const Card = () => {
   )
 }
 
-export default Card
+export default Card;
