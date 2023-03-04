@@ -33,5 +33,18 @@ router.post('/create', (req, res) => { //*pos isteği için yapılandırma
 
 }); 
 
+// get userdata 
+
+router.get('/getuser',(req,res)=>{
+
+    conn.query("SELECT * FROM users",(err,result)=>{
+        if(err){
+            res.status(422).json("nodata available");
+        }else{
+            res.status(201).json(result);
+        }
+    })
+});
+
 module.exports = router;
 

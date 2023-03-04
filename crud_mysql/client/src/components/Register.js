@@ -35,6 +35,23 @@ const Register = () => {
 
         const { name, email, work, add, mobile, desc, age } = inpval;
 
+        if(name == ""){
+            alert("Name is required");
+        }else if(email == ""){
+            alert("Email is required");
+        }else if(!email.includes("@")){
+            alert("Please enter a valid email")
+        }else if(work == ""){
+            alert("work is required");    
+        }else if(mobile == ""){
+            alert("mobile is required")
+        }else if(add == ""){
+        alert("add is required")
+        }else if(age == ""){
+            alert("age is required")
+        }
+
+
         const res = await fetch("/create", {
             method: "POST",
             headers: {
