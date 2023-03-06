@@ -22,7 +22,7 @@ const Home = () => {
 
     const getdata = async () => {
 
-        const res = await fetch("https://crudappreactjs.herokuapp.com/getdata", {
+        const res = await fetch("/getusers", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"

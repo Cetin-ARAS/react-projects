@@ -35,7 +35,7 @@ router.post('/create', (req, res) => { //*pos isteği için yapılandırma
 
 // get userdata 
 
-router.get('/getuser',(req,res)=>{
+router.get('/getusers',(req,res)=>{
 
     conn.query("SELECT * FROM users",(err,result)=>{
         if(err){
