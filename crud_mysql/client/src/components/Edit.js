@@ -41,7 +41,7 @@ const Edit = () => {
 
     const getdata = async () => {
 
-        const res = await fetch(`https://crudappreactjs.herokuapp.com/getuser/${id}`, {
+        const res = await fetch(`/induser/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -55,7 +55,7 @@ const Edit = () => {
             console.log("error ");
 
         } else {
-            setINP(data)
+            setINP(data[0])
             console.log("get data");
 
         }

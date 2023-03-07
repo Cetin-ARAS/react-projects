@@ -23,7 +23,7 @@ const Details = () => {
 
     const getdata = async () => {
 
-        const res = await fetch(`https://crudappreactjs.herokuapp.com/getuser/${id}`, {
+        const res = await fetch(`/induser/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -37,7 +37,7 @@ const Details = () => {
             console.log("error ");
 
         } else {
-            setUserdata(data)
+            setUserdata(data[0])
             console.log("get data");
         }
     }
@@ -48,7 +48,7 @@ const Details = () => {
 
     const deleteuser = async (id) => {
 
-        const res2 = await fetch(`https://crudappreactjs.herokuapp.com/deleteuser/${id}`, {
+        const res2 = await fetch(`/deleteuser/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
@@ -74,7 +74,7 @@ const Details = () => {
             <Card sx={{ maxWidth: 600 }}>
                 <CardContent>
                     <div className="add_btn">
-                        <NavLink to={`/edit/${getuserdata._id}`}>  <button className="btn btn-primary mx-2"><CreateIcon /></button></NavLink>
+                        <NavLink to={`/edit/${getuserdata.id}`}>  <button className="btn btn-primary mx-2"><CreateIcon /></button></NavLink>
                         <button className="btn btn-danger" onClick={() => deleteuser(getuserdata._id)}><DeleteOutlineIcon /></button>
                     </div>
                     <div className="row">

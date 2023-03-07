@@ -61,6 +61,37 @@ router.delete('/deleteuser/:id',(req,res)=>{
     })
 });
 
+// get single user
+
+router.get("/induser/:id",(req,res)=>{
+
+    const {id} = req.params;
+
+    conn.query("SELECT * FROM users WHERE id = ? ", id,(err,result)=>{
+        if(err){
+            res.status(422).json("error");
+        }else{
+            res.status(201).json("result");
+        }
+    })
+})
+
+// update users api 
+
+router.patch("/updateuser/:id",(req,res)=>{
+
+    const {id} = req.params;
+
+    const data = req.body;
+
+    conn.query("UPDATE users SET ? WHERE id = ? ", [data.id],(err,result)=>{
+        if(err){
+            res.status(422).json({message: "error"});
+        }else{
+            res.status(201).json(result);
+        }
+    })
+});
 
 module.exports = router;
 
