@@ -1,3 +1,6 @@
+
+require('dotenv').config();
+
 //* bir Express uygulaması oluşturarak bir HTTP sunucusu oluşturuyor.
 const express = require('express'); //*express modülü yükleniyor.
 const app = express(); //*bir Express uygulaması oluşturuluyor. Bu uygulama, app değişkenine atanıyor

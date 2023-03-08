@@ -48,7 +48,7 @@ router.get('/getusers',(req,res)=>{
 
 // user delete api
 
-router.delete('/deleteuser/:id',(req,res)=>{
+router.delete("/deleteuser/:id",(req,res)=>{
 
     const {id} = req.params; 
 

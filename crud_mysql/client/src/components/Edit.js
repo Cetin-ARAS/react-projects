@@ -71,7 +71,7 @@ const Edit = () => {
 
         const {name,email,work,add,mobile,desc,age} = inpval;
 
-        const res2 = await fetch(`https://crudappreactjs.herokuapp.com/updateuser/${id}`,{
+        const res2 = await fetch(`updateuser/${id}`,{
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"

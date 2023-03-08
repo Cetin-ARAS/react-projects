@@ -4,10 +4,10 @@ const mysql = require('mysql2'); //* mysql2 modülü yükleniyor.
 
    //*mysql.createConnection metodu kullanılarak bir bağlantı nesnesi oluşturuluyor. Bu metodun aldığı obje parametresi, veritabanına bağlanmak için gerekli olan kullanıcı adı (user), sunucu adresi (host), şifre (password) ve veritabanı adı (database) gibi bilgileri içerir.
 const conn = mysql.createConnection({ 
-    user: 'root',
-    host: 'localhost',
-    password: 'Caras1907.',
-    database: 'crudmysql'
+    user:process.env.DB_USER,
+    host:process.env.DB_HOST,
+    password:process.env.DB_PASSWORD,
+    database:process.env.DB_DATABASE
 });
 
 //*conn.connect((err)=>{ ... }); ifadesiyle oluşturulan bağlantı nesnesi, connect metoduyla MySQL veritabanına bağlanıyor. Eğer bir hata oluşursa, throw err ifadesiyle hata fırlatılıyor ve program sonlanıyor. Aksi takdirde, "DB connected" ifadesi konsola yazdırılıyor ve bağlantı başarılı bir şekilde gerçekleşiyor.
